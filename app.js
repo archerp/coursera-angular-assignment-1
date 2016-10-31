@@ -13,14 +13,14 @@
 
         $scope.checkLunch = function () {
         
-            if ($scope.lunchList === "") {
+            var lunchItems = $scope.lunchList.split(',').filter(isValidLunchItem); // .filter removes empty items ie ', ,' and ',,'
+
+            if (lunchItems.length === 0) {
                 $scope.lunchMessage = "Please enter data first";
                 $scope.messageStyle = "text-danger";
                 $scope.inputStyle = "has-warning";
                 return;                               
             }
-
-            var lunchItems = $scope.lunchList.split(',').filter(isValidLunchItem); // .filter removes ', ,'
 
             if (lunchItems.length  > 3) {
                 $scope.lunchMessage =  "Too much!";
