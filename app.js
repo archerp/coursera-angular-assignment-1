@@ -15,7 +15,8 @@
         
             if ($scope.lunchList === "") {
                 $scope.lunchMessage = "Please enter data first";
-                $scope.messageColour = "Red";
+                $scope.messageStyle = "text-danger";
+                $scope.inputStyle = "has-warning";
                 return;                               
             }
 
@@ -23,13 +24,15 @@
 
             if (lunchItems.length  > 3) {
                 $scope.lunchMessage =  "Too much!";
-                $scope.messageColour = "Green";
+                $scope.messageStyle = "text-success";
+                $scope.inputStyle = "has-success";
                 return;                               
             }
 
             if (lunchItems.length  <= 3) {
                 $scope.lunchMessage =  "Enjoy!";  
-                $scope.messageColour = "Green";
+                $scope.messageStyle = "text-success";
+                $scope.inputStyle = "has-success";
                 return;                               
             }                   
 
